@@ -1,0 +1,273 @@
+@font-face {
+  font-family: 'Zilla Slab';
+  font-weight: 300;
+  src: local('Zilla Slab Light'),
+    url('fonts/zillaslab-light-webfont.woff2') format('woff2'),
+    url('fonts/zillaslab-light-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Zilla Slab';
+  font-weight: 400;
+  src: local('Zilla Slab Regular'),
+    url('fonts/zillaslab-regular-webfont.woff2') format('woff2'),
+    url('fonts/zillaslab-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Zilla Slab';
+  font-weight: 700;
+  src: local('Zilla Slab Bold'),
+    url('fonts/zillaslab-bold-webfont.woff2') format('woff2'),
+    url('fonts/zillaslab-bold-webfont.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+:root {
+  font-size: 16px;
+  font-family: 'Zilla Slab', serif;
+  --dark-clr: #080708;
+  --light-clr: #e6e8e6;
+  --red-clr: #df2935;
+  --yellow-clr: #fdca40;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2rem;
+}
+
+body {
+  background-color: var(--light-clr);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.icon-l {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-m {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-s {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.sm {
+  font-size: 0.8rem;
+}
+
+.header,
+.main,
+.footer {
+  padding: 1rem;
+}
+
+.hero-underlay {
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  aspect-ratio: 0.75;
+  background-color: var(--dark-clr);
+  clip-path: polygon(0 0, 100% 0%, 100% 40%, 0 70%);
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
+}
+
+.hero-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--light-clr);
+  text-shadow: 0 0 1rem var(--dark-clr);
+}
+
+.header > .container {
+  display: grid;
+  gap: 1rem;
+}
+
+.about,
+.my-work {
+  display: grid;
+  gap: 1rem;
+}
+
+.about svg,
+.my-work svg {
+  fill: var(--dark-clr);
+}
+
+.header-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  gap: 0.5rem;
+  background-color: var(--light-clr);
+  box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5),
+    -3px 3px 3px rgba(128, 128, 128, 0.5);
+  padding-bottom: 2rem;
+}
+
+.card-picture {
+  aspect-ratio: 1.5;
+  background-color: var(--red-clr);
+  color: var(--light-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.card:nth-child(even) .card-picture {
+  background-color: var(--yellow-clr);
+  color: var(--dark-clr);
+}
+
+.card-body {
+  padding: 0 1rem;
+}
+
+.card-body > * + * {
+  margin-top: 0.5rem;
+}
+
+.card-links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer {
+  background-color: var(--dark-clr);
+  color: var(--light-clr);
+}
+
+.footer svg {
+  fill: var(--light-clr);
+}
+
+.footer > .container {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .hero-underlay {
+    aspect-ratio: 1.25;
+  }
+
+  .header > .container {
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: 'picture title' 'picture about';
+    gap: 0;
+    align-items: center;
+  }
+
+  .hero {
+    display: contents;
+  }
+
+  .hero > img {
+    grid-area: picture;
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero > .hero-title {
+    grid-area: title;
+    position: static;
+  }
+
+  .about {
+    grid-area: about;
+    background-color: var(--light-clr);
+    padding: 0.5rem;
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
+  }
+
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    font-size: 24px;
+  }
+
+  .hero-underlay {
+    aspect-ratio: 2.5;
+  }
+
+  .header > .container {
+    grid-template-columns: 500px 1fr;
+  }
+
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
