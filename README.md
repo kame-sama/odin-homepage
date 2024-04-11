@@ -1,5 +1,7 @@
 # Project: Homepage
 
+[Live!](https://kame-sama.github.io/odin-homepage/)
+
 This project is a part of the [Advanced HTML and CSS Course](https://www.theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css) on [The Odin Project](https://www.theodinproject.com/). The goal of this project is to create a responsive homepage using HTML and CSS.
 
 ## Description
