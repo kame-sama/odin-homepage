@@ -80,6 +80,20 @@ body {
   height: 1rem;
 }
 
+.icon-l,
+.icon-m,
+.icon-s {
+  transition: transform 250ms ease-in;
+  position: relative;
+  z-index: 999;
+}
+
+.icon-l:hover,
+.icon-m:hover,
+.icon-s:hover {
+  transform: scale(1.1);
+}
+
 .sm {
   font-size: 0.8rem;
 }
